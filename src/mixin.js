@@ -1,6 +1,6 @@
 'use strict';
 
-var Quill = require('quill');
+var Quill = require('@peergrade/quill');
 
 var QuillMixin = {
 
