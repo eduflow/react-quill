@@ -21,6 +21,7 @@ declare namespace ReactQuill {
 		defaultValue?: string | Quill.Delta;
 		placeholder?: string;
 		tabIndex?: number;
+		preserveWhitespace?: boolean;
 		bounds?: string | HTMLElement;
 		onChange?: (
 			content: string,
