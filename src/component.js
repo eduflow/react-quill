@@ -26,6 +26,7 @@ var QuillComponent = createClass({
 		defaultValue: T.oneOfType([T.string, T.shape({ops: T.array})]),
 		placeholder: T.string,
 		tabIndex: T.number,
+		preserveWhitespace: T.bool,
 		bounds: T.oneOfType([T.string, T.element]),
 		onChange: T.func,
 		onChangeSelection: T.func,
@@ -329,6 +330,7 @@ var QuillComponent = createClass({
 	renderEditingArea: function() {
 		var self = this;
 		var children = this.props.children;
+		var preserveWhitespace = this.props.preserveWhitespace;
 
 		var properties = {
 			key: this.state.generation,
@@ -340,9 +342,10 @@ var QuillComponent = createClass({
 			? React.Children.only(children)
 			: null;
 
+		var defaultElement = preserveWhitespace ? DOM.pre : DOM.div;
 		var editingArea = customElement
 			? React.cloneElement(customElement, properties)
-			: DOM.div(properties);
+			: defaultElement(properties);
 
 		return editingArea;
 	},
