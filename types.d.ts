@@ -23,6 +23,7 @@ declare namespace ReactQuill {
 		tabIndex?: number;
 		bounds?: string | HTMLElement;
 		scrollingContainer?: string | HTMLElement;
+		preserveWhitespace?: boolean;
 		onChange?: (
 			content: string,
 			delta: Quill.Delta,
